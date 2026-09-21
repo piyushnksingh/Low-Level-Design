@@ -117,44 +117,48 @@
 #
 # ============================================================
 
-from abc import  ABC, abstractmethod
+from abc import ABC, abstractmethod
 
-class INotification(ABC):
+class DeliveryStrategy(ABC):
     @abstractmethod
-    def send_notification(self, msg: str):
+    def calculate_fee(self):
         pass
 
 
-class EmailNotification(INotification):
-    def send_notification(self, msg: str):
-        print(f"Email Notification: {msg}")
+class StandardDelivery(DeliveryStrategy):
+    def calculate_fee(self):
+        return 50
 
-class SMSNotification(INotification):
-    def send_notification(self, msg: str):
-        print(f"SMS Notification: {msg}")
+class ExpressDelivery(DeliveryStrategy):
+    def calculate_fee(self):
+        return 100
 
-class PushNotification(INotification):
-    def send_notification(self, msg: str):
-        print(f"Push Notification: {msg}")
+class SameDayDelivery(DeliveryStrategy):
+    def calculate_fee(self):
+        return 200
 
 
-class NotificationStrategy:
-    def __init__(self, strategy: INotification):
-        self._strategy = strategy
+class DeliveryService():
+    def __init__(self, delivery_strategy : DeliveryStrategy):
+        self.delivery_strategy = delivery_strategy
 
-    def set_strategy(self, strategy: INotification):
-        self._strategy = strategy
+    def calculate_fee(self):
+        return self.delivery_strategy.calculate_fee()
 
-    def notify(self, msg: str):
-        self._strategy.send_notification(msg)
 
-if __name__ == '__main__':
-    message = "Hello World!"
-    strategy = NotificationStrategy(EmailNotification())
-    strategy. notify(message)
+class Client:
+    service_1 = DeliveryService(StandardDelivery())
+    print(service_1.calculate_fee())
 
-    strategy.set_strategy(SMSNotification())
-    strategy.notify(message)
+    service_2 = DeliveryService(ExpressDelivery())
+    print(service_2.calculate_fee())
 
-    strategy.set_strategy(PushNotification())
-    strategy.notify(message)
+    service_3 = DeliveryService(SameDayDelivery())
+    print(service_3.calculate_fee())
+
+
+if __name__ == "__main__":
+    Client()
+
+
+

@@ -1,3 +1,8 @@
+# Dependency Injection vs Dependency Inversion
+# Dependency Inversion : Depend on abstractions rather than concrete implementations. (A design principle)
+# Dependency Injection : A technique used to achieve that.
+
+
 # class MySQLDatabase:  # Low-level module
 #     def save_to_sql(self, data):
 #         print(f"Executing SQL Query: INSERT INTO users VALUES('{data}');")

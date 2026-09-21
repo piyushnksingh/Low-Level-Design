@@ -1,5 +1,5 @@
 # DEFINITION : SUBCLASS SHOULD BE SUBSTITUTABLE FOR THEIR BASE CLASS
-
+# Child should safely replace parent
 # ------------------------------ LSP violated -------------------------------------
 
 from abc import ABC, abstractmethod

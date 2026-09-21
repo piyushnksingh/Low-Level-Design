@@ -1,3 +1,7 @@
+# Don't force clients to depend on methods they don't need
+# Small, focused interfaces are better than one fat interface.
+
+
 # class Shape:
 #     def area(self):
 #         raise NotImplementedError
