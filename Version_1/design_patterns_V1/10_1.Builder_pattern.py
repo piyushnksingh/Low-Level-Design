@@ -74,3 +74,66 @@ def main():
 if __name__ == "__main__":
     main()
 
+
+"""
+class Computer:
+    def __init__(self):
+        self.cpu = None
+        self.ram = None
+        self.storage = None
+        self.gpu = None
+        self.wifi = None
+
+    def on(self):
+        print("Computer on with following details")
+        print("CPU:", self.cpu)
+        print("RAM:", self.ram)
+        print("Storage:", self.storage)
+        print("GPU:", self.gpu)
+        print("WiFi:", self.wifi)
+
+
+class ComputerBuilder:
+    def __init__(self):
+        self.computer = Computer()
+
+    def with_cpu(self, cpu):
+        self.computer.cpu = cpu
+        return self
+
+    def with_ram(self, ram):
+        self.computer.ram = ram
+        return self
+
+    def with_storage(self, storage):
+        self.computer.storage = storage
+        return self
+
+    def with_gpu(self, gpu):
+        self.computer.gpu = gpu
+        return self
+
+    def with_wifi(self, wifi):
+        self.computer.wifi = wifi
+        return self
+
+    def build(self):
+        if not self.computer.cpu or not self.computer.ram:
+            raise ValueError("CPU and RAM are required")
+
+        return self.computer
+
+
+computer = (
+    ComputerBuilder()
+    .with_cpu("Intel i7")
+    .with_ram("32GB")
+    .with_storage("1TB SSD")
+    .with_gpu("RTX 4070")
+    .with_wifi(True)
+    .build()
+)
+
+computer.on()
+"""
+

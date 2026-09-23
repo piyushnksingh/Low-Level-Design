@@ -96,3 +96,83 @@ def main():
     )
 
     request.execute()
+
+
+"""
+class Computer:
+    def __init__(self):
+        self.cpu = None
+        self.ram = None
+        self.storage = None
+        self.gpu = None
+        self.wifi = None
+
+    def on(self):
+        print("Computer on with following details")
+        print("CPU:", self.cpu)
+        print("RAM:", self.ram)
+        print("Storage:", self.storage)
+        print("GPU:", self.gpu)
+        print("WiFi:", self.wifi)
+
+
+class CPUStep:
+    def __init__(self, builder):
+        self.builder = builder
+
+    def with_cpu(self, cpu):
+        self.builder.computer.cpu = cpu
+        return RamStep(self.builder)
+
+
+class RamStep:
+    def __init__(self, builder):
+        self.builder = builder
+
+    def with_ram(self, ram):
+        self.builder.computer.ram = ram
+        return OptionalStep(self.builder)
+
+
+class OptionalStep:
+    def __init__(self, builder):
+        self.builder = builder
+
+    def with_storage(self, storage):
+        self.builder.computer.storage = storage
+        return self
+
+    def with_gpu(self, gpu):
+        self.builder.computer.gpu = gpu
+        return self
+
+    def with_wifi(self, wifi):
+        self.builder.computer.wifi = wifi
+        return self
+
+    def build(self):
+        return self.builder.computer
+
+
+class ComputerStepBuilder:
+    def __init__(self):
+        self.computer = Computer()
+
+    @staticmethod
+    def builder():
+        builder = ComputerStepBuilder()
+        return CPUStep(builder)
+
+
+computer = (
+    ComputerStepBuilder.builder()
+    .with_cpu("Intel i7")
+    .with_ram("32GB")
+    .with_storage("1TB SSD")
+    .with_gpu("RTX 4070")
+    .with_wifi(True)
+    .build()
+)
+
+computer.on()
+"""
