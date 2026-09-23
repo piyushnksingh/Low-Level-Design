@@ -218,7 +218,7 @@
 #
 # class Client:
 #     notification_factory = NotificationFactory()
-#     notification = notification_factory.create_notification("Email")
+#     notification = notification_factory.z("Email")
 #     notification.notify()
 #
 #     notification = notification_factory.create_notification("SMS")

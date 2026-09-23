@@ -23,11 +23,9 @@ class ImageElement(DocumentElement):
     def render(self) -> str:
         return f"[Image: {self.image_path}]"
 
-
 class NewLineElement(DocumentElement):
     def render(self) -> str:
         return "\n"
-
 
 class TabSpaceElement(DocumentElement):
     def render(self) -> str:
